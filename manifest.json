@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "WhatsApp Redirecionador",
+    "version": "1.0",
+    "description": "Extensão para abrir o WhatsApp com um número específico",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://web.whatsapp.com/",
+        "http://localhost/corban/*",
+        "https://corbanv2.acertagenciadecredito.com.br/*",
+        "https://corban.acertagenciadecredito.com.br/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
